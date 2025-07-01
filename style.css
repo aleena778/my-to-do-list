@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  padding: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 2.8rem;
+  color: #b266ff;
+}
+.subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+.input-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+.input-section input[type="text"],
+.input-section input[type="date"] {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #b266ff;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+.add-btn {
+  background-color: #b266ff;
+  color: #111;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.add-btn:hover {
+  background-color: #a64dff;
+  animation: bounce 0.4s ease;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-5px); }
+  60%  { transform: translateY(0); }
+  100% { transform: translateY(-2px); }
+}
+.controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.controls select {
+  margin: 0 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: none;
+  background: #333;
+  color: #fff;
+}
+.task-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+.task-list {
+  list-style: none;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 10px;
+}
+.task-list li {
+  background-color: #1e1e1e;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+.task-list li button {
+  margin-left: 10px;
+  border: none;
+  background: transparent;
+  color: #b266ff;
+  cursor: pointer;
+}
+#clear-all {
+  padding: 10px 20px;
+  background: transparent;
+  color: #ff3366;
+  border: 2px solid #ff3366;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+body.light-theme {
+  background-color: #f3f3f3;
+  color: #111;
+}
+
+body.light-theme .input-section input[type="text"],
+body.light-theme .input-section input[type="date"] {
+  background-color: #fff;
+  border-color: #b266ff;
+  color: #111;
+}
+
+body.light-theme .add-btn {
+  background-color: #b266ff;
+  color: #fff;
+}
+
+body.light-theme .task-list li {
+  background-color: #e9e9e9;
+  color: #111;
+}
+
+body.light-theme .task-list li.completed span {
+  color: #888;
+}
+
+body.light-theme .task-list li button {
+  color: #b266ff;
+}
+
+body.light-theme .controls select {
+  background: #ddd;
+  color: #111;
+}
+
+body.light-theme #clear-all {
+  color: #ff3366;
+  border-color: #ff3366;
+}
+
+body.light-theme .theme-toggle button {
+  background: transparent;
+}
+/* 🌙 Stylish Dark Mode - Animated Gradient */
+body {
+  background: linear-gradient(-45deg, #1e1e1e, #2b2b2b, #1f1f1f, #121212);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: #fff;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* ☀️ Stylish Light Mode - Soft Radial Glow */
+body.light-theme {
+  background: radial-gradient(circle at top left, #fefefe, #e5e5e5 70%);
+  color: #111;
+}
+
+/* Optional: Adjust container background for light mode */
+body.light-theme .task-list li {
+  background-color: #f8f8f8;
+}
+/* GEN-Z Glowing Blobs */
+.genz-blobs {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  animation: blobMove 20s infinite ease-in-out;
+}
+
+.blob.pink {
+  background: #ff70a6;
+  top: 10%;
+  left: 20%;
+}
+
+.blob.purple {
+  background: #b266ff;
+  top: 50%;
+  left: 60%;
+  animation-delay: 5s;
+}
+
+.blob.cyan {
+  background: #60f0f8;
+  top: 80%;
+  left: 30%;
+  animation-delay: 10s;
+}
+
+@keyframes blobMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, -30px) scale(1.2);
+  }
+}

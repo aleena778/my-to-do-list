@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="theme-toggle">
+    <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+  </div>
+
+  <header>
+    <h1>MY TO DO LIST</h1>
+    <p class="subtitle">Add a new task</p>
+  </header>
+
+  <div class="input-section">
+    <input type="text" id="task-input" placeholder="Type a task..." />
+    <input type="date" id="due-date" />
+    <button onclick="addTask()" class="add-btn"><i class="fas fa-plus"></i></button>
+  </div>
+
+  <div class="controls">
+    <p id="task-counter">0 tasks</p>
+    <button id="clear-all" onclick="clearAllTasks()">Clear All Tasks</button>
+    <select id="filter" onchange="renderTasks()">
+      <option value="all">All</option>
+      <option value="active">Active</option>
+      <option value="completed">Completed</option>
+    </select>
+
+    <select id="sortMode" onchange="renderTasks()">
+      <option value="manual">Manual Drag</option>
+      <option value="due">Sort by Due Date</option>
+    </select>
+  </div>
+
+  <section class="task-wrapper">
+    <ul id="task-list" class="task-list"></ul>
+  </section>
+  <!-- Glowing Gradient Blobs -->
+<div class="genz-blobs">
+  <div class="blob pink"></div>
+  <div class="blob purple"></div>
+  <div class="blob cyan"></div>
+</div>
+
+
+  <audio id="checkSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_392d338130.mp3?filename=correct-answer-3-89776.mp3" preload="auto"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
